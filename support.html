@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glug — Destek</title>
+<style>
+  :root {
+    --bg: #eaf7f9; --card: #ffffff; --line: #d7eaee;
+    --text: #0f1e33; --text-mut: #5b7285; --accent: #1fa6b4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b161f; --card: #12222e; --line: #1e3542;
+      --text: #eaf6f8; --text-mut: #93aab8; --accent: #4fd8e6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 56px 24px 100px; line-height: 1.65; }
+  .eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .lede { color: var(--text-mut); font-size: 15px; margin: 0 0 40px; }
+  h2 { font-size: 17px; font-weight: 700; margin: 32px 0 8px; }
+  p { font-size: 15px; margin: 0 0 14px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 22px; margin: 28px 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .faq { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
+  .faq h2 { margin-top: 0; }
+  footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--text-mut);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Glug</div>
+  <h1>Destek</h1>
+  <p class="lede">Glug ile ilgili bir sorun mu yaşıyorsun, önerin mi var? Aşağıdan bize ulaşabilirsin.</p>
+
+  <div class="card">
+    <p><strong>E-posta:</strong> <a href="mailto:gokhannavci@gmail.com">gokhannavci@gmail.com</a><br>
+    Genelde 1-2 iş günü içinde dönüş yapıyoruz.</p>
+  </div>
+
+  <div class="faq">
+    <h2>Günlük su hedefimi nasıl değiştiririm?</h2>
+    <p>Ayarlar → Daily Goal bölümünden hedefi elle girebilir, ya da kilona göre otomatik
+    hesaplattırabilirsin ("Recalculate based on weight").</p>
+  </div>
+
+  <div class="faq">
+    <h2>Aboneliğimi nasıl iptal ederim?</h2>
+    <p>Glug Pro aboneliğin Apple tarafından yönetilir. iPhone'unda Ayarlar → (isminin
+    altında) → Abonelikler → Glug yoluyla istediğin zaman iptal edebilirsin. İptal
+    ettiğinde erişimin mevcut faturalama döneminin sonuna kadar devam eder.</p>
+  </div>
+
+  <div class="faq">
+    <h2>Apple Watch ile çalışıyor mu?</h2>
+    <p>Evet — Glug Watch uygulamasından tek dokunuşla su ekleyebilirsin, iPhone'daki
+    ilerlemenle otomatik senkronize olur.</p>
+  </div>
+
+  <div class="faq">
+    <h2>Verilerim nerede saklanıyor?</h2>
+    <p>Tamamen kendi cihazında. Glug'ın sunucusu yok — ayrıntılar için
+    <a href="https://gkhnavci.github.io/glug-legal/">Gizlilik Politikası</a> sayfamıza bakabilirsin.</p>
+  </div>
+
+  <footer>Glug Support — hosted at glug-legal (GitHub Pages)</footer>
+</div>
+</body>
+</html>
