@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glug — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #eaf7f9;
+    --card: #ffffff;
+    --line: #d7eaee;
+    --text: #0f1e33;
+    --text-mut: #5b7285;
+    --accent: #1fa6b4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b161f;
+      --card: #12222e;
+      --line: #1e3542;
+      --text: #eaf6f8;
+      --text-mut: #93aab8;
+      --accent: #4fd8e6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 56px 24px 100px; line-height: 1.65; }
+  .eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .updated { color: var(--text-mut); font-size: 13.5px; margin: 0 0 40px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 36px 0 10px; }
+  p, li { font-size: 15px; color: var(--text); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 700; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 22px; margin: 24px 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--text-mut);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Glug</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: August 1, 2026</p>
+
+  <p>Glug ("the app") is a hydration tracking app for iPhone and Apple Watch. This
+  page explains what information the app handles and how. In short: <strong>almost
+  everything stays on your device</strong> — Glug has no servers of its own and does
+  not require an account.</p>
+
+  <h2>Information the app handles</h2>
+  <ul>
+    <li><strong>Hydration entries you log</strong> (drink type, amount, time) — stored
+    only on your device, using Apple's on-device SwiftData storage. This data is never
+    sent to us because we have nowhere to send it to.</li>
+    <li><strong>Profile details you enter</strong> (name, weight, daily goal, language,
+    sound/notification preferences) — stored locally on your device to personalize the
+    app and calculate your daily water goal.</li>
+    <li><strong>Apple Health data</strong> — if you grant permission, Glug can read and
+    write water intake (<code>dietaryWater</code>) to the Health app. This only happens
+    with your explicit permission, and access is managed entirely through iOS Settings →
+    Health → Data Access & Devices, where you can revoke it at any time.</li>
+    <li><strong>Apple Watch sync</strong> — if you use the Glug Watch app, your hydration
+    totals sync directly between your iPhone and your paired Apple Watch using Apple's
+    WatchConnectivity framework. This is a direct device-to-device connection; it does
+    not pass through any third-party server.</li>
+    <li><strong>Purchases</strong> — subscriptions and in-app purchases are processed
+    entirely by Apple through StoreKit. Glug never sees or stores your payment
+    information; we only receive confirmation of what you've unlocked.</li>
+  </ul>
+
+  <div class="card">
+    <p><strong>What Glug does not do:</strong> no account or sign-in is required, no
+    advertising identifiers are collected, no third-party analytics or advertising SDKs
+    are used, and no hydration or profile data is transmitted to any server — Glug does
+    not operate a backend.</p>
+  </div>
+
+  <h2>Notifications</h2>
+  <p>Reminder notifications are scheduled locally on your device based on your own
+  activity. They do not rely on a push notification server and no notification content
+  is sent anywhere outside your device.</p>
+
+  <h2>Data sharing</h2>
+  <p>We do not sell, rent, or share your data with third parties. The only parties
+  involved in running Glug are Apple's own frameworks (HealthKit, StoreKit,
+  WatchConnectivity, local notifications), which are governed by Apple's own privacy
+  terms for those services.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>You can revoke Apple Health access at any time in iOS Settings → Health → Data
+    Access & Devices → Glug.</li>
+    <li>You can turn off notifications and sounds from within the app's Settings screen.</li>
+    <li>Deleting the app removes all locally stored hydration and profile data from your
+    device.</li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>Glug is not directed at children under 13 and does not knowingly collect personal
+  information from them.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted at this same address
+  with a new "Last updated" date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or your data can be sent to
+  <a href="mailto:gokhannavci@gmail.com">gokhannavci@gmail.com</a>.</p>
+
+  <footer>Glug Privacy Policy — hosted at glug-legal (GitHub Pages)</footer>
+</div>
+</body>
+</html>
