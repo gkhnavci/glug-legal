@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Glug — Support</title>
 <style>
   :root {
@@ -12,6 +13,7 @@
     --text: #0f1e33;
     --text-mut: #5b7285;
     --accent: #1fa6b4;
+    color-scheme: light;
   }
   * { box-sizing: border-box; }
   body {
@@ -22,10 +24,17 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 700px; margin: 0 auto; padding: 56px 24px 100px; line-height: 1.65; }
+  .top-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
   .eyebrow {
     font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 10px;
+    color: var(--accent); margin-bottom: 0;
   }
+  .lang-toggle {
+    font-family: inherit; font-size: 13px; font-weight: 800; color: var(--text);
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 13px; cursor: pointer;
+  }
+  .lang-toggle:hover { border-color: var(--accent); }
   h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
   .updated { color: var(--text-mut); font-size: 13.5px; margin: 0 0 40px; }
   h2 { font-size: 18px; font-weight: 700; margin: 36px 0 10px; }
@@ -67,45 +76,89 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">Glug</div>
-  <h1>Support</h1>
-  <p class="updated">Need a hand with Glug? Answers to common questions are below,
+  <div class="top-row">
+    <div class="eyebrow">Glug</div>
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">TR</button>
+  </div>
+  <h1 data-i18n data-en="Support" data-tr="Destek">Support</h1>
+  <p class="updated" data-i18n data-en="Need a hand with Glug? Answers to common questions are below, plus how to reach me directly." data-tr="Glug ile ilgili yardıma mı ihtiyacın var? Sık sorulan soruların cevapları aşağıda, ayrıca bana doğrudan nasıl ulaşabileceğin de.">Need a hand with Glug? Answers to common questions are below,
   plus how to reach me directly.</p>
 
-  <h2>Frequently Asked Questions</h2>
+  <h2 data-i18n data-en="Frequently Asked Questions" data-tr="Sıkça Sorulan Sorular">Frequently Asked Questions</h2>
 
   <div class="faq-item">
-    <h3>Do I need to create an account?</h3>
-    <p>No — Glug works entirely on your device. There's no sign-up, and all your
+    <h3 data-i18n data-en="Do I need to create an account?" data-tr="Hesap oluşturmam gerekiyor mu?">Do I need to create an account?</h3>
+    <p data-i18n data-en="No — Glug works entirely on your device. There's no sign-up, and all your hydration data stays stored privately on your phone." data-tr="Hayır — Glug tamamen cihazında çalışır. Kayıt olmaya gerek yoktur ve tüm su takibi verilerin telefonunda özel olarak saklanır.">No — Glug works entirely on your device. There's no sign-up, and all your
     hydration data stays stored privately on your phone.</p>
   </div>
 
   <div class="faq-item">
-    <h3>How do I sync with Apple Watch?</h3>
-    <p>The Glug Apple Watch app syncs automatically with your iPhone as long as
+    <h3 data-i18n data-en="How do I sync with Apple Watch?" data-tr="Apple Watch ile nasıl senkronize olurum?">How do I sync with Apple Watch?</h3>
+    <p data-i18n data-en="The Glug Apple Watch app syncs automatically with your iPhone as long as they're paired and nearby. Just open the app on your watch to log water." data-tr="Glug Apple Watch uygulaması, eşleştirilmiş ve yakın oldukları sürece iPhone'un ile otomatik olarak senkronize olur. Su kaydetmek için saatindeki uygulamayı açman yeterli.">The Glug Apple Watch app syncs automatically with your iPhone as long as
     they're paired and nearby. Just open the app on your watch to log water.</p>
   </div>
 
   <div class="faq-item">
-    <h3>Is my data shared with anyone?</h3>
-    <p>Never. Glug has no servers and no third-party analytics or advertising SDKs.
+    <h3 data-i18n data-en="Is my data shared with anyone?" data-tr="Verilerim başkalarıyla paylaşılıyor mu?">Is my data shared with anyone?</h3>
+    <p data-i18n data-en="Never. Glug has no servers and no third-party analytics or advertising SDKs. If you enable HealthKit, water intake is written only to the Apple Health app on your own device." data-tr="Asla. Glug'un sunucusu, üçüncü taraf analiz veya reklam SDK'sı yoktur. HealthKit'i etkinleştirirsen, su tüketimi yalnızca kendi cihazındaki Apple Health uygulamasına yazılır.">Never. Glug has no servers and no third-party analytics or advertising SDKs.
     If you enable HealthKit, water intake is written only to the Apple Health app on
     your own device.</p>
   </div>
 
   <div class="faq-item">
-    <h3>How do I cancel or manage my subscription?</h3>
-    <p>Subscriptions are managed entirely by Apple. Go to iOS Settings → your name →
+    <h3 data-i18n data-en="How do I cancel or manage my subscription?" data-tr="Aboneliğimi nasıl iptal eder veya yönetirim?">How do I cancel or manage my subscription?</h3>
+    <p data-i18n data-en="Subscriptions are managed entirely by Apple. Go to iOS Settings → your name → Subscriptions to view, change, or cancel." data-tr="Abonelikler tamamen Apple tarafından yönetilir. Görüntülemek, değiştirmek veya iptal etmek için iOS Ayarlar → adın → Abonelikler yolunu izle.">Subscriptions are managed entirely by Apple. Go to iOS Settings → your name →
     Subscriptions to view, change, or cancel.</p>
   </div>
 
   <div class="card contact-card">
-    <h2>Still need help?</h2>
-    <p>If you have a question, feedback, or just want to say hi, reach out directly.</p>
-    <a href="mailto:gokhan_avci@icloud.com?subject=Glug App Support" class="btn-contact">Email Support</a>
+    <h2 data-i18n data-en="Still need help?" data-tr="Hâlâ yardıma mı ihtiyacın var?">Still need help?</h2>
+    <p data-i18n data-en="If you have a question, feedback, or just want to say hi, reach out directly." data-tr="Bir sorun, geri bildirimin varsa ya da sadece merhaba demek istiyorsan, doğrudan ulaş.">If you have a question, feedback, or just want to say hi, reach out directly.</p>
+    <a href="mailto:gokhan_avci@icloud.com?subject=Glug App Support" class="btn-contact" data-i18n data-en="Email Support" data-tr="E-posta ile Destek">Email Support</a>
   </div>
 
-  <footer>Glug Support — hosted at glug-legal (GitHub Pages) · <a href="privacy.html">Privacy Policy</a></footer>
+  <footer data-i18n data-en-html='Glug Support — hosted at glug-legal (GitHub Pages) · <a href="privacy.html">Privacy Policy</a>' data-tr-html='Glug Destek — glug-legal üzerinde barındırılıyor (GitHub Pages) · <a href="privacy.html">Gizlilik Politikası</a>'>Glug Support — hosted at glug-legal (GitHub Pages) · <a href="privacy.html">Privacy Policy</a></footer>
 </div>
+
+<script>
+(function () {
+  var STORAGE_KEY = "glug-lang";
+
+  function detectDefault() {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === "en" || saved === "tr") return saved;
+    return (navigator.language || "").toLowerCase().indexOf("tr") === 0 ? "tr" : "en";
+  }
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var html = el.getAttribute("data-" + lang + "-html");
+      if (html !== null) {
+        el.innerHTML = html;
+        return;
+      }
+      var text = el.getAttribute("data-" + lang);
+      if (text !== null) {
+        el.textContent = text;
+      }
+    });
+    var toggle = document.getElementById("langToggle");
+    if (toggle) toggle.textContent = lang === "en" ? "TR" : "EN";
+  }
+
+  var current = detectDefault();
+  applyLang(current);
+
+  var btn = document.getElementById("langToggle");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      current = current === "en" ? "tr" : "en";
+      localStorage.setItem(STORAGE_KEY, current);
+      applyLang(current);
+    });
+  }
+})();
+</script>
 </body>
 </html>

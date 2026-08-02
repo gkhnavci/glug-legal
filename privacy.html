@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Glug — Privacy Policy</title>
 <style>
   :root {
@@ -12,6 +13,7 @@
     --text: #0f1e33;
     --text-mut: #5b7285;
     --accent: #1fa6b4;
+    color-scheme: light;
   }
   * { box-sizing: border-box; }
   body {
@@ -22,10 +24,17 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 700px; margin: 0 auto; padding: 56px 24px 100px; line-height: 1.65; }
+  .top-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
   .eyebrow {
     font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 10px;
+    color: var(--accent); margin-bottom: 0;
   }
+  .lang-toggle {
+    font-family: inherit; font-size: 13px; font-weight: 800; color: var(--text);
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 13px; cursor: pointer;
+  }
+  .lang-toggle:hover { border-color: var(--accent); }
   h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
   .updated { color: var(--text-mut); font-size: 13.5px; margin: 0 0 40px; }
   h2 { font-size: 18px; font-weight: 700; margin: 36px 0 10px; }
@@ -48,76 +57,120 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">Glug</div>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: August 1, 2026</p>
+  <div class="top-row">
+    <div class="eyebrow">Glug</div>
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">TR</button>
+  </div>
+  <h1 data-i18n data-en="Privacy Policy" data-tr="Gizlilik Politikası">Privacy Policy</h1>
+  <p class="updated" data-i18n data-en="Last updated: August 1, 2026" data-tr="Son güncelleme: 1 Ağustos 2026">Last updated: August 1, 2026</p>
 
-  <p>Glug ("the app") is a hydration tracking app for iPhone and Apple Watch. This
+  <p data-i18n data-en-html='Glug ("the app") is a hydration tracking app for iPhone and Apple Watch. This page explains what information the app handles and how. In short: <strong>almost everything stays on your device</strong> — Glug has no servers of its own and does not require an account.' data-tr-html='Glug ("uygulama"), iPhone ve Apple Watch için bir su takip uygulamasıdır. Bu sayfa, uygulamanın hangi bilgileri nasıl işlediğini açıklar. Kısacası: <strong>neredeyse her şey cihazında kalır</strong> — Glug\'un kendi sunucusu yoktur ve hesap gerektirmez.'>Glug ("the app") is a hydration tracking app for iPhone and Apple Watch. This
   page explains what information the app handles and how. In short: <strong>almost
   everything stays on your device</strong> — Glug has no servers of its own and does
   not require an account.</p>
 
-  <h2>Information the app handles</h2>
+  <h2 data-i18n data-en="Information the app handles" data-tr="Uygulamanın işlediği bilgiler">Information the app handles</h2>
   <ul>
-    <li><strong>Hydration entries you log</strong> (drink type, amount, time) — stored
+    <li data-i18n data-en-html='<strong>Hydration entries you log</strong> (drink type, amount, time) — stored only on your device, using Apple\'s on-device SwiftData storage. This data is never sent to us because we have nowhere to send it to.' data-tr-html='<strong>Kaydettiğin su takibi girişleri</strong> (içecek türü, miktar, zaman) — yalnızca cihazında, Apple\'ın cihaz üzeri SwiftData depolamasıyla saklanır. Bu veri bize asla gönderilmez, çünkü gönderecek bir yerimiz yok.'><strong>Hydration entries you log</strong> (drink type, amount, time) — stored
     only on your device, using Apple's on-device SwiftData storage. This data is never
     sent to us because we have nowhere to send it to.</li>
-    <li><strong>Profile details you enter</strong> (name, weight, daily goal, language,
+    <li data-i18n data-en-html='<strong>Profile details you enter</strong> (name, weight, daily goal, language, sound/notification preferences) — stored locally on your device to personalize the app and calculate your daily water goal.' data-tr-html='<strong>Girdiğin profil bilgileri</strong> (isim, kilo, günlük hedef, dil, ses/bildirim tercihleri) — uygulamayı kişiselleştirmek ve günlük su hedefini hesaplamak için cihazında yerel olarak saklanır.'><strong>Profile details you enter</strong> (name, weight, daily goal, language,
     sound/notification preferences) — stored locally on your device to personalize the
     app and calculate your daily water goal.</li>
-    <li><strong>Apple Health data</strong> — if you grant permission, Glug can read and
+    <li data-i18n data-en-html='<strong>Apple Health data</strong> — if you grant permission, Glug can read and write water intake (<code>dietaryWater</code>) to the Health app. This only happens with your explicit permission, and access is managed entirely through iOS Settings → Health → Data Access &amp; Devices, where you can revoke it at any time.' data-tr-html='<strong>Apple Health verisi</strong> — izin verirsen, Glug su tüketimini (<code>dietaryWater</code>) Health uygulamasına okuyup yazabilir. Bu yalnızca açık iznin olduğunda gerçekleşir ve erişim tamamen iOS Ayarlar → Sağlık → Veri Erişimi ve Cihazlar üzerinden yönetilir; istediğin zaman iptal edebilirsin.'><strong>Apple Health data</strong> — if you grant permission, Glug can read and
     write water intake (<code>dietaryWater</code>) to the Health app. This only happens
     with your explicit permission, and access is managed entirely through iOS Settings →
-    Health → Data Access & Devices, where you can revoke it at any time.</li>
-    <li><strong>Apple Watch sync</strong> — if you use the Glug Watch app, your hydration
+    Health → Data Access &amp; Devices, where you can revoke it at any time.</li>
+    <li data-i18n data-en-html='<strong>Apple Watch sync</strong> — if you use the Glug Watch app, your hydration totals sync directly between your iPhone and your paired Apple Watch using Apple\'s WatchConnectivity framework. This is a direct device-to-device connection; it does not pass through any third-party server.' data-tr-html='<strong>Apple Watch senkronizasyonu</strong> — Glug Watch uygulamasını kullanıyorsan, su takibi toplamların iPhone\'un ile eşleştirilmiş Apple Watch\'un arasında Apple\'ın WatchConnectivity çerçevesi kullanılarak doğrudan senkronize edilir. Bu, doğrudan cihazdan cihaza bir bağlantıdır; herhangi bir üçüncü taraf sunucudan geçmez.'><strong>Apple Watch sync</strong> — if you use the Glug Watch app, your hydration
     totals sync directly between your iPhone and your paired Apple Watch using Apple's
     WatchConnectivity framework. This is a direct device-to-device connection; it does
     not pass through any third-party server.</li>
-    <li><strong>Purchases</strong> — subscriptions and in-app purchases are processed
+    <li data-i18n data-en-html='<strong>Purchases</strong> — subscriptions and in-app purchases are processed entirely by Apple through StoreKit. Glug never sees or stores your payment information; we only receive confirmation of what you\'ve unlocked.' data-tr-html='<strong>Satın almalar</strong> — abonelikler ve uygulama içi satın almalar tamamen Apple tarafından StoreKit üzerinden işlenir. Glug ödeme bilgilerini asla görmez veya saklamaz; yalnızca neyin kilidini açtığına dair bir onay alırız.'><strong>Purchases</strong> — subscriptions and in-app purchases are processed
     entirely by Apple through StoreKit. Glug never sees or stores your payment
     information; we only receive confirmation of what you've unlocked.</li>
   </ul>
 
   <div class="card">
-    <p><strong>What Glug does not do:</strong> no account or sign-in is required, no
+    <p data-i18n data-en-html='<strong>What Glug does not do:</strong> no account or sign-in is required, no advertising identifiers are collected, no third-party analytics or advertising SDKs are used, and no hydration or profile data is transmitted to any server — Glug does not operate a backend.' data-tr-html='<strong>Glug\'un yapmadıkları:</strong> hesap veya giriş gerekmez, reklam kimlikleri toplanmaz, üçüncü taraf analiz veya reklam SDK\'ları kullanılmaz ve hiçbir su takibi veya profil verisi herhangi bir sunucuya gönderilmez — Glug\'un bir arka ucu (backend) yoktur.'><strong>What Glug does not do:</strong> no account or sign-in is required, no
     advertising identifiers are collected, no third-party analytics or advertising SDKs
     are used, and no hydration or profile data is transmitted to any server — Glug does
     not operate a backend.</p>
   </div>
 
-  <h2>Notifications</h2>
-  <p>Reminder notifications are scheduled locally on your device based on your own
+  <h2 data-i18n data-en="Notifications" data-tr="Bildirimler">Notifications</h2>
+  <p data-i18n data-en="Reminder notifications are scheduled locally on your device based on your own activity. They do not rely on a push notification server and no notification content is sent anywhere outside your device." data-tr="Hatırlatma bildirimleri, kendi etkinliğine göre cihazında yerel olarak planlanır. Bir push bildirim sunucusuna bağlı değildirler ve bildirim içeriği cihazının dışına asla gönderilmez.">Reminder notifications are scheduled locally on your device based on your own
   activity. They do not rely on a push notification server and no notification content
   is sent anywhere outside your device.</p>
 
-  <h2>Data sharing</h2>
-  <p>We do not sell, rent, or share your data with third parties. The only parties
+  <h2 data-i18n data-en="Data sharing" data-tr="Veri paylaşımı">Data sharing</h2>
+  <p data-i18n data-en="We do not sell, rent, or share your data with third parties. The only parties involved in running Glug are Apple's own frameworks (HealthKit, StoreKit, WatchConnectivity, local notifications), which are governed by Apple's own privacy terms for those services." data-tr="Verilerini üçüncü taraflara satmıyor, kiralamıyor veya paylaşmıyoruz. Glug'un çalışmasında yer alan tek taraflar, bu hizmetler için Apple'ın kendi gizlilik şartlarına tabi olan Apple'ın kendi çerçeveleridir (HealthKit, StoreKit, WatchConnectivity, yerel bildirimler).">We do not sell, rent, or share your data with third parties. The only parties
   involved in running Glug are Apple's own frameworks (HealthKit, StoreKit,
   WatchConnectivity, local notifications), which are governed by Apple's own privacy
   terms for those services.</p>
 
-  <h2>Your choices</h2>
+  <h2 data-i18n data-en="Your choices" data-tr="Seçeneklerin">Your choices</h2>
   <ul>
-    <li>You can revoke Apple Health access at any time in iOS Settings → Health → Data
-    Access & Devices → Glug.</li>
-    <li>You can turn off notifications and sounds from within the app's Settings screen.</li>
-    <li>Deleting the app removes all locally stored hydration and profile data from your
+    <li data-i18n data-en="You can revoke Apple Health access at any time in iOS Settings → Health → Data Access & Devices → Glug." data-tr="Apple Health erişimini istediğin zaman iOS Ayarlar → Sağlık → Veri Erişimi ve Cihazlar → Glug üzerinden iptal edebilirsin.">You can revoke Apple Health access at any time in iOS Settings → Health → Data
+    Access &amp; Devices → Glug.</li>
+    <li data-i18n data-en="You can turn off notifications and sounds from within the app's Settings screen." data-tr="Bildirimleri ve sesleri uygulamanın Ayarlar ekranından kapatabilirsin.">You can turn off notifications and sounds from within the app's Settings screen.</li>
+    <li data-i18n data-en="Deleting the app removes all locally stored hydration and profile data from your device." data-tr="Uygulamayı silmek, cihazında yerel olarak saklanan tüm su takibi ve profil verilerini kaldırır.">Deleting the app removes all locally stored hydration and profile data from your
     device.</li>
   </ul>
 
-  <h2>Children's privacy</h2>
-  <p>Glug is not directed at children under 13 and does not knowingly collect personal
+  <h2 data-i18n data-en="Children's privacy" data-tr="Çocukların gizliliği">Children's privacy</h2>
+  <p data-i18n data-en="Glug is not directed at children under 13 and does not knowingly collect personal information from them." data-tr="Glug, 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek kişisel bilgi toplamaz.">Glug is not directed at children under 13 and does not knowingly collect personal
   information from them.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted at this same address
+  <h2 data-i18n data-en="Changes to this policy" data-tr="Bu politikadaki değişiklikler">Changes to this policy</h2>
+  <p data-i18n data-en='If this policy changes, the updated version will be posted at this same address with a new "Last updated" date.' data-tr='Bu politika değişirse, güncellenmiş sürüm yeni bir "Son güncelleme" tarihiyle aynı adreste yayınlanacaktır.'>If this policy changes, the updated version will be posted at this same address
   with a new "Last updated" date.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy or your data can be sent to
+  <h2 data-i18n data-en="Contact" data-tr="İletişim">Contact</h2>
+  <p data-i18n data-en-html='Questions about this policy or your data can be sent to <a href="mailto:gokhan_avci@icloud.com">gokhan_avci@icloud.com</a>.' data-tr-html='Bu politika veya verilerinle ilgili sorularını <a href="mailto:gokhan_avci@icloud.com">gokhan_avci@icloud.com</a> adresine gönderebilirsin.'>Questions about this policy or your data can be sent to
   <a href="mailto:gokhan_avci@icloud.com">gokhan_avci@icloud.com</a>.</p>
 
-  <footer>Glug Privacy Policy — hosted at glug-legal (GitHub Pages) · <a href="support.html">Support</a></footer>
+  <footer data-i18n data-en-html='Glug Privacy Policy — hosted at glug-legal (GitHub Pages) · <a href="support.html">Support</a>' data-tr-html='Glug Gizlilik Politikası — glug-legal üzerinde barındırılıyor (GitHub Pages) · <a href="support.html">Destek</a>'>Glug Privacy Policy — hosted at glug-legal (GitHub Pages) · <a href="support.html">Support</a></footer>
 </div>
+
+<script>
+(function () {
+  var STORAGE_KEY = "glug-lang";
+
+  function detectDefault() {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === "en" || saved === "tr") return saved;
+    return (navigator.language || "").toLowerCase().indexOf("tr") === 0 ? "tr" : "en";
+  }
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var html = el.getAttribute("data-" + lang + "-html");
+      if (html !== null) {
+        el.innerHTML = html;
+        return;
+      }
+      var text = el.getAttribute("data-" + lang);
+      if (text !== null) {
+        el.textContent = text;
+      }
+    });
+    var toggle = document.getElementById("langToggle");
+    if (toggle) toggle.textContent = lang === "en" ? "TR" : "EN";
+  }
+
+  var current = detectDefault();
+  applyLang(current);
+
+  var btn = document.getElementById("langToggle");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      current = current === "en" ? "tr" : "en";
+      localStorage.setItem(STORAGE_KEY, current);
+      applyLang(current);
+    });
+  }
+})();
+</script>
 </body>
 </html>
