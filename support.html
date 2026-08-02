@@ -1,86 +1,213 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glug — Destek</title>
-<style>
-  :root {
-    --bg: #eaf7f9; --card: #ffffff; --line: #d7eaee;
-    --text: #0f1e33; --text-mut: #5b7285; --accent: #1fa6b4;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b161f; --card: #12222e; --line: #1e3542;
-      --text: #eaf6f8; --text-mut: #93aab8; --accent: #4fd8e6;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 700px; margin: 0 auto; padding: 56px 24px 100px; line-height: 1.65; }
-  .eyebrow {
-    font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 10px;
-  }
-  h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 0 0 10px; letter-spacing: -0.01em; }
-  .lede { color: var(--text-mut); font-size: 15px; margin: 0 0 40px; }
-  h2 { font-size: 17px; font-weight: 700; margin: 32px 0 8px; }
-  p { font-size: 15px; margin: 0 0 14px; }
-  a { color: var(--accent); }
-  .card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-    padding: 20px 22px; margin: 28px 0;
-  }
-  .card p:last-child { margin-bottom: 0; }
-  .faq { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
-  .faq h2 { margin-top: 0; }
-  footer {
-    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
-    font-size: 12.5px; color: var(--text-mut);
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glug - Support</title>
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient-start: #e0f2fe; 
+            --bg-gradient-end: #bae6fd;   
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --text-main: #2c3e50;
+            --text-muted: #546e7a;
+            --primary-color: #0ea5e9;
+            --primary-hover: #0284c7;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        /* Glassmorphism efektli ana kart */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            border-bottom: 2px dashed #bae6fd;
+            padding-bottom: 12px;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.15rem;
+            margin: 0 0 8px 0;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f0f9ff;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 6px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.45);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 25px; }
+            .header h1 { font-size: 2.2rem; }
+            .contact-section { padding: 25px 15px; }
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="eyebrow">Glug</div>
-  <h1>Destek</h1>
-  <p class="lede">Glug ile ilgili bir sorun mu yaşıyorsun, önerin mi var? Aşağıdan bize ulaşabilirsin.</p>
 
-  <div class="card">
-    <p><strong>E-posta:</strong> <a href="mailto:gokhannavci@gmail.com">gokhannavci@gmail.com</a><br>
-    Genelde 1-2 iş günü içinde dönüş yapıyoruz.</p>
-  </div>
+    <div class="container">
+        <div class="header">
+            <h1>💧 Glug Support</h1>
+            <p>We're here to help you stay hydrated!</p>
+        </div>
 
-  <div class="faq">
-    <h2>Günlük su hedefimi nasıl değiştiririm?</h2>
-    <p>Ayarlar → Daily Goal bölümünden hedefi elle girebilir, ya da kilona göre otomatik
-    hesaplattırabilirsin ("Recalculate based on weight").</p>
-  </div>
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Do I need to create an account?</h3>
+                <p>No! Glug works entirely on your device. We don't require any sign-ups, and all your hydration data is stored securely and privately on your phone.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How do I sync with Apple Watch?</h3>
+                <p>The Glug Apple Watch app syncs automatically with your iPhone as long as they are paired and nearby. Just open the app on your watch to log your water!</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Is my data shared with anyone?</h3>
+                <p>Never. Glug respects your privacy. If you enable HealthKit, we only write your water intake to the Apple Health app on your device. We do not collect or sell your data.</p>
+            </div>
+        </div>
 
-  <div class="faq">
-    <h2>Aboneliğimi nasıl iptal ederim?</h2>
-    <p>Glug Pro aboneliğin Apple tarafından yönetilir. iPhone'unda Ayarlar → (isminin
-    altında) → Abonelikler → Glug yoluyla istediğin zaman iptal edebilirsin. İptal
-    ettiğinde erişimin mevcut faturalama döneminin sonuna kadar devam eder.</p>
-  </div>
+        <div class="contact-section">
+            <h2>Still need help?</h2>
+            <p>If you have any questions, feedback, or just want to say hi, feel free to reach out directly!</p>
+            <a href="mailto:gokhannavci@gmail.com?subject=Glug App Support" class="btn-contact">Email Support</a>
+        </div>
 
-  <div class="faq">
-    <h2>Apple Watch ile çalışıyor mu?</h2>
-    <p>Evet — Glug Watch uygulamasından tek dokunuşla su ekleyebilirsin, iPhone'daki
-    ilerlemenle otomatik senkronize olur.</p>
-  </div>
+        <div class="footer">
+            &copy; 2024 Gökhan Avcı. All rights reserved. <br>
+            <a href="/privacy.html">Privacy Policy</a>
+        </div>
+    </div>
 
-  <div class="faq">
-    <h2>Verilerim nerede saklanıyor?</h2>
-    <p>Tamamen kendi cihazında. Glug'ın sunucusu yok — ayrıntılar için
-    <a href="https://gkhnavci.github.io/glug-legal/">Gizlilik Politikası</a> sayfamıza bakabilirsin.</p>
-  </div>
-
-  <footer>Glug Support — hosted at glug-legal (GitHub Pages)</footer>
-</div>
 </body>
 </html>
